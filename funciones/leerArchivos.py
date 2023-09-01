@@ -1,4 +1,5 @@
 import random
+from DB.conexion import DB
 
 def leerData(numero):
     
@@ -54,6 +55,8 @@ def mostrar(listaNombre,listaApellidos,nombreMujeres,numero):
         nombre = listaNombre[x][0]
         apellidos = listaApellidos[i][0]
         
-        print(f"{nombre} --> {apellidos} --> {genere} --> {estadoCivil} --> {estatura} --> {pesoPersona} --> {edadPersona}")
-            
+        # print(f"{nombre} --> {apellidos} --> {genere} --> {estadoCivil} --> {estatura} --> {pesoPersona} --> {edadPersona}")
+        db = DB()
+        db.registrarDatos(nombre,apellidos,genere,estadoCivil,estatura,pesoPersona,edadPersona)
+        
         i = i+1
